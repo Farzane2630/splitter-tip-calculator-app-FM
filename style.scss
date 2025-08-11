@@ -1,0 +1,118 @@
+// ==========================
+// 🎨 Colors
+// ==========================
+$colors :(pale-blue: hsl(189, 47%, 97%),
+    light-blue: hsl(185, 41%, 84%),
+    grey-400:hsl(184, 14%, 56%),
+    grey-500: hsl(186, 14%, 43%),
+    dark-green: hsl(183, 100%, 15%),
+    primary-green: hsl(172, 67%, 45%));
+
+@function color($name) {
+    @return map-get($colors, $name)
+}
+
+;
+
+// ==========================
+// ✍ Typography
+// ==========================
+$font-family-base: 'Space Mono', sans-serif;
+$font-size-base: 24px;
+$font-weight-base :700;
+
+// ==========================
+// 🔧 Global Reset & Base Styles
+// ==========================
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    align-content: start;
+    justify-content: center;
+    gap: 1em;
+    background-color: color(light-blue);
+    color: color(grey-500);
+}
+
+h1 {
+    letter-spacing: 0.25em;
+    font-weight: 500;
+    font-size: 1em;
+    text-align: center;
+    display: grid;
+    height: fit-content;
+}
+
+
+// ==========================
+// 🏗 Layout
+// ==========================
+.wrapper {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 1em;
+    padding: 1em 1.5em;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 30em) {
+        width: 30em;
+        flex-direction: row;
+    }
+}
+
+// .input-section {}
+
+
+.output-section {
+    background-color: color(dark-green);
+    border-radius: 1.5em;
+    padding: 1em;
+    display: grid;
+    width: 100%;
+
+    .output {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        :first-child {
+            color: #fff;
+            font-weight: $font-weight-base;
+        }
+
+        :last-child {
+            font-size: 0.5em;
+            color: color(grey-400);
+        }
+
+        .output-value {
+            font-size: 2em;
+            font-weight: bolder;
+            color: color(primary-green);
+        }
+    }
+
+
+    #reset-btn {
+        background-color: color(primary-green);
+        color: color(dark-green);
+        border: none;
+        border-radius: 0.25em;
+        font-size: $font-size-base;
+        font-weight: $font-weight-base;
+        padding-block: 0.5EM;
+    }
+
+}
