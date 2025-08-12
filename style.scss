@@ -35,6 +35,7 @@ $colors :(pale-blue: hsl(189, 47%, 97%),
 @mixin Input-Icon ($icon) {
     background: url($icon) no-repeat 8px center;
     background-color: color(pale-blue);
+    text-align: right;
 }
 
 // ==========================

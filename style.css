@@ -65,10 +65,12 @@ button[aria-label="click"] {
         border-color: red; }
     .input-section .tip-form legend input#bill {
       background: url("images/icon-dollar.svg") no-repeat 8px center;
-      background-color: #f4fafb; }
+      background-color: #f4fafb;
+      text-align: right; }
     .input-section .tip-form legend input#people {
       background: url("images/icon-person.svg") no-repeat 8px center;
-      background-color: #f4fafb; }
+      background-color: #f4fafb;
+      text-align: right; }
     .input-section .tip-form legend input#custom-tip {
       width: 100%;
       text-align: center; }
