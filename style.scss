@@ -14,6 +14,16 @@ $colors :(pale-blue: hsl(189, 47%, 97%),
 
 ;
 
+@mixin Btn-Style($bg, $text-color) {
+    background-color: $bg;
+    color: $text-color;
+    border: none;
+    border-radius: 0.25em;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    padding-block: 0.5em;
+}
+
 // ==========================
 // ✍ Typography
 // ==========================
@@ -43,6 +53,7 @@ body {
     gap: 1em;
     background-color: color(light-blue);
     color: color(grey-500);
+    padding-block: 2em;
 }
 
 h1 {
@@ -62,17 +73,69 @@ h1 {
     width: 100%;
     background-color: #fff;
     border-radius: 1em;
-    padding: 1em 1.5em;
+    padding: 0.5em;
     display: flex;
     flex-direction: column;
+    row-gap: 0.5em;
 
-    @media (min-width: 30em) {
+    @media (min-width: 45em) {
         width: 30em;
         flex-direction: row;
+        column-gap: 2em;
     }
 }
 
-// .input-section {}
+.input-section {
+    .tip-form {
+        padding: 0.5em;
+        font-size: 0.75em;
+        font-weight: $font-weight-base;
+        display: grid;
+        gap: 1em;
+
+        legend {
+            display: grid;
+            gap: 0.5em;
+
+            input {
+                border: none;
+                padding: 1em 0.5em;
+                border-radius: 0.5em;
+                background-color: color(pale-blue);
+                padding-inline-start: 2em;
+            }
+
+            input#bill {
+                background: url('images/icon-dollar.svg') no-repeat 8px center;
+                background-color: color(pale-blue);
+            }
+
+            input#people {
+                background: url('images/icon-person.svg') no-repeat 8px center;
+                background-color: color(pale-blue);
+            }
+
+            input#custom-tip {
+                width: 100%;
+                text-align: center;
+                font-weight: $font-weight-base;
+            }
+
+            .btn-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1em;
+
+                .tip-btn {
+                    @include Btn-Style(color(dark-green), #fff);
+
+                }
+
+            }
+        }
+    }
+
+}
 
 
 .output-section {
@@ -80,6 +143,7 @@ h1 {
     border-radius: 1.5em;
     padding: 1em;
     display: grid;
+    gap: 1em;
     width: 100%;
 
     .output {
@@ -106,13 +170,7 @@ h1 {
 
 
     #reset-btn {
-        background-color: color(primary-green);
-        color: color(dark-green);
-        border: none;
-        border-radius: 0.25em;
-        font-size: $font-size-base;
-        font-weight: $font-weight-base;
-        padding-block: 0.5EM;
+        @include Btn-Style(color(primary-green), color(dark-green));
     }
 
 }
