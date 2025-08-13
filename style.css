@@ -26,9 +26,6 @@ h1 {
   display: grid;
   height: fit-content; }
 
-button[aria-label="click"] {
-  background-color: #26c0ab; }
-
 .wrapper {
   width: 100%;
   background-color: #fff;
@@ -93,6 +90,8 @@ button[aria-label="click"] {
         .input-section .tip-form legend .btn-wrapper .tip-btn:hover {
           background-color: #c5e4e7;
           color: #00494d; }
+      .input-section .tip-form legend .btn-wrapper .tip-btn.active {
+        background-color: #26c0ab; }
 
 .output-section {
   background-color: #00494d;

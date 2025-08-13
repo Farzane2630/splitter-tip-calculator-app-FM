@@ -79,13 +79,6 @@ h1 {
     height: fit-content;
 }
 
-
-// shared styles for buttons
-button[aria-label="click"] {
-    background-color: color(primary-green);
-}
-
-
 // ==========================
 // 🏗 Layout
 // ==========================
@@ -158,6 +151,10 @@ button[aria-label="click"] {
 
                 .tip-btn {
                     @include Btn-Style(color(dark-green), #fff);
+                }
+
+                .tip-btn.active {
+                    background-color: color(primary-green);
                 }
 
             }
