@@ -61,28 +61,68 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
+Here’s a **clear, concise “Mistakes & Learning Points”** section you can copy into your project’s README so you’ll remember these in the future:
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+---
 
-To see how you can add code snippets, see below:
+## Mistakes & Learning Points (HTML)
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+### **1. Misuse of `<legend>`**
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+* `<legend>` must be used **only inside** a `<fieldset>` to label a group of related form controls.
+* Using `<legend>` to wrap individual inputs is **invalid HTML**.
+  **Learning:** Use `<div>` or `<fieldset>` appropriately depending on context.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+---
+
+### **2. Missing or Improper Labels**
+
+* Some inputs (e.g., "Custom Tip") relied solely on a placeholder.
+* Placeholders are **not** a replacement for `<label>` — they disappear when typing and are not read by screen readers consistently.
+  **Learning:** Always provide accessible labels, even if visually hidden.
+
+---
+
+### **3. Incorrect Input Types**
+
+* "Bill" was `type="text"` instead of `type="number"`.
+  **Learning:** Use `type="number"` for numeric input to prevent invalid characters and trigger numeric keyboards on mobile.
+
+---
+
+### **4. Tip Buttons Accessibility**
+
+* Tip percentage buttons work visually, but they’re semantically better as **radio inputs** if they represent a single choice in a set.
+  **Learning:** Use the correct control type for the intended interaction.
+
+---
+
+### **5. Reset Button Behavior**
+
+* Used `type="reset"` when functionality may need custom logic.
+  **Learning:** Use `type="button"` and handle reset in JavaScript for predictable behavior.
+
+---
+
+### **6. Font Loading Optimization**
+
+* Requested many font weights (`300–800`) for **Space Mono**, but the font family doesn’t even have all those weights.
+  **Learning:** Only load the font weights you actually use to reduce page load.
+
+---
+
+### **7. Semantic Section Naming**
+
+* Sections named only `input-section` / `output-section`.
+  **Learning:** Use descriptive, semantic names (`form-section`, `result-section`) to improve maintainability.
+
+---
+
+### **8. Form Structure**
+
+* Unnecessary `action="#"` if not submitting to a server.
+  **Learning:** Remove unused attributes for cleaner HTML.
+
 
 ### Continued development
 
