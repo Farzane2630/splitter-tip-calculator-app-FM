@@ -1,18 +1,18 @@
 // ==========================
 // 🎨 Colors
 // ==========================
-$colors :(pale-blue: hsl(189, 47%, 97%),
+$colors: (
+    pale-blue: hsl(189, 47%, 97%),
     light-blue: hsl(185, 41%, 84%),
-    grey-400:hsl(184, 14%, 56%),
+    grey-400: hsl(184, 14%, 56%),
     grey-500: hsl(186, 14%, 43%),
     dark-green: hsl(183, 100%, 15%),
-    primary-green: hsl(172, 67%, 45%));
+    primary-green: hsl(172, 67%, 45%)
+);
 
 @function color($name) {
-    @return map-get($colors, $name)
+    @return map-get($colors, $name);
 }
-
-;
 
 @mixin Btn-Style($bg, $text-color) {
     background-color: $bg;
@@ -30,9 +30,7 @@ $colors :(pale-blue: hsl(189, 47%, 97%),
     }
 }
 
-;
-
-@mixin Input-Icon ($icon) {
+@mixin Input-Icon($icon) {
     background: url($icon) no-repeat 8px center;
     background-color: color(pale-blue);
     text-align: right;
@@ -43,7 +41,7 @@ $colors :(pale-blue: hsl(189, 47%, 97%),
 // ==========================
 $font-family-base: 'Space Mono', sans-serif;
 $font-size-base: 24px;
-$font-weight-base :700;
+$font-weight-base: 700;
 
 // ==========================
 // 🔧 Global Reset & Base Styles
@@ -96,15 +94,20 @@ h1 {
     }
 }
 
-.input-section {
-    .tip-form {
+.form-section {
+    #tip-form {
         padding: 0.5em;
         font-size: 0.75em;
         font-weight: $font-weight-base;
         display: grid;
         gap: 1em;
 
-        legend {
+        .form-group {
+            border: none;
+        }
+
+        .form-group,
+        fieldset {
             display: grid;
             gap: 0.5em;
 
@@ -119,11 +122,11 @@ h1 {
 
                 &:focus {
                     outline: solid 3px color(primary-green);
-                    color: color(dark-green)
+                    color: color(dark-green);
                 }
 
-                :invalid {
-                    border-color: red;
+                &:invalid {
+                    border: 2px solid red;
                 }
             }
 
@@ -156,15 +159,12 @@ h1 {
                 .tip-btn.active {
                     background-color: color(primary-green);
                 }
-
             }
         }
     }
-
 }
 
-
-.output-section {
+.result-section {
     background-color: color(dark-green);
     border-radius: 1.5em;
     padding: 1em;
@@ -173,19 +173,26 @@ h1 {
     gap: 1em;
     width: 100%;
 
+    
     .output {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
 
-        :first-child {
-            color: #fff;
-            font-weight: $font-weight-base;
+        .content {
+            display: grid;
+            grid-template-columns: 1fr;
         }
+        .output-label {
+            p:first-child {
+                color: #fff;
+                font-weight: $font-weight-base;
+            }
 
-        :last-child {
-            font-size: 0.5em;
-            color: color(grey-400);
+            p:last-child {
+                font-size: 0.5em;
+                color: color(grey-400);
+            }
         }
 
         .output-value {
@@ -195,9 +202,7 @@ h1 {
         }
     }
 
-
     #reset-btn {
         @include Btn-Style(color(primary-green), color(dark-green));
     }
-
 }

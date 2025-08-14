@@ -10,29 +10,33 @@
       href="./images/favicon-32x32.png"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-
     <script src="index.js" defer></script>
-    <title>Frontend Mentor | Tip calculator app</title>
+    <title>Tip Calculator</title>
   </head>
   <body>
-    <h1 class="title">
-      <span> SPLI </span>
-      <span> TTER </span>
-    </h1>
-    <main class="wrapper">
-      <section class="input-section">
-        <form action="#" class="tip-form">
-          <legend>
-            <label for="bill">Bill</label>
-            <input type="text" name="bill" id="bill" placeholder="0" />
-          </legend>
+    <h1 class="title"><span>SPLI</span> <span>TTER</span></h1>
 
-          <legend>
-            <label for="tip">Select Tip %</label>
+    <main class="wrapper">
+      <section class="form-section">
+        <form id="tip-form">
+          <div class="form-group">
+            <label for="bill">Bill</label>
+            <input
+              type="number"
+              name="bill"
+              id="bill"
+              placeholder="0"
+              min="0"
+              step="0.01"
+            />
+          </div>
+
+          <fieldset class="form-group">
+            <legend>Select Tip %</legend>
             <div class="btn-wrapper">
               <button type="button" class="tip-btn" data-tip="5">5%</button>
               <button type="button" class="tip-btn" data-tip="10">10%</button>
@@ -44,31 +48,42 @@
                 name="custom-tip"
                 id="custom-tip"
                 placeholder="Custom"
+                min="0"
               />
             </div>
-          </legend>
-          <legend>
-            <label for="people">Number of people</label>
-            <input type="number" name="people" id="people" placeholder="0" />
-          </legend>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="people">Number of People</label>
+            <input
+              type="number"
+              name="people"
+              id="people"
+              placeholder="0"
+              min="1"
+            />
+          </div>
         </form>
       </section>
-      <section class="output-section">
-        <div class="output">
-          <div class="output-label">
-            <p>Tip Amount</p>
-            <p>/ person</p>
+
+      <section class="result-section">
+        <div class="content">
+          <div class="output">
+            <div class="output-label">
+              <p>Tip Amount</p>
+              <p>/ person</p>
+            </div>
+            <p class="output-value" id="tip-amount">$0.00</p>
           </div>
-          <p class="output-value" id="tip-amount">$0.00</p>
-        </div>
-        <div class="output">
-          <div class="output-label">
-            <p>Total</p>
-            <p>/ person</p>
+          <div class="output">
+            <div class="output-label">
+              <p>Total</p>
+              <p>/ person</p>
+            </div>
+            <p class="output-value" id="total-amount">$0.00</p>
           </div>
-          <p class="output-value" id="total-amount">$0.00</p>
         </div>
-        <button type="reset" id="reset-btn">RESET</button>
+        <button type="button" id="reset-btn">RESET</button>
       </section>
     </main>
   </body>
