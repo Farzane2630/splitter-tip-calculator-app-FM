@@ -55,7 +55,9 @@ Users should be able to:
 
 ### What I learned
 1. To load CSS Files async, you can check the code block below.
+1. To load CSS Files async, you can check the code block below.
 
+`<link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">`
 `<link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">`
 
 ## Mistakes & Learning Points (HTML)
