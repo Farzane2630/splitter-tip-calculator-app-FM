@@ -81,7 +81,6 @@ h1 {
 // 🏗 Layout
 // ==========================
 .wrapper {
-    width: 100%;
     background-color: #fff;
     border-radius: 1em;
     padding: 1em;
@@ -90,8 +89,12 @@ h1 {
 
     @media (min-width: 45em) {
         grid-template-columns: repeat(2, 1fr);
-        max-width: 45em;
     }
+    @media (min-width: 60em) {
+        width: 80vw;
+    }
+
+    
 }
 
 .form-section {
@@ -148,7 +151,7 @@ h1 {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1em;
 
-                @media (min-width: 45em) {
+                @media (min-width: 50em) {
                     grid-template-columns: repeat(3, 1fr);
                 }
 
@@ -184,14 +187,13 @@ h1 {
             grid-template-columns: 1fr;
         }
         .output-label {
+            color: #fff;
             p:first-child {
-                color: #fff;
                 font-weight: $font-weight-base;
             }
 
             p:last-child {
                 font-size: 0.5em;
-                // color: color(grey-400);
             }
         }
 

@@ -27,7 +27,6 @@ h1 {
   height: fit-content; }
 
 .wrapper {
-  width: 100%;
   background-color: #fff;
   border-radius: 1em;
   padding: 1em;
@@ -35,8 +34,10 @@ h1 {
   gap: 1em; }
   @media (min-width: 45em) {
     .wrapper {
-      grid-template-columns: repeat(2, 1fr);
-      max-width: 45em; } }
+      grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 60em) {
+    .wrapper {
+      width: 80vw; } }
 
 .form-section #tip-form {
   padding: 0.5em;
@@ -85,7 +86,7 @@ h1 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1em; }
-      @media (min-width: 45em) {
+      @media (min-width: 50em) {
         .form-section #tip-form .form-group .btn-wrapper,
         .form-section #tip-form fieldset .btn-wrapper {
           grid-template-columns: repeat(3, 1fr); } }
@@ -122,12 +123,12 @@ h1 {
     .result-section .output .content {
       display: grid;
       grid-template-columns: 1fr; }
-    .result-section .output .output-label p:first-child {
-      color: #fff;
-      font-weight: 700; }
-    .result-section .output .output-label p:last-child {
-      font-size: 0.5em;
-      color: #7f9c9f; }
+    .result-section .output .output-label {
+      color: #fff; }
+      .result-section .output .output-label p:first-child {
+        font-weight: 700; }
+      .result-section .output .output-label p:last-child {
+        font-size: 0.5em; }
     .result-section .output .output-value {
       font-size: 2em;
       font-weight: bolder;
