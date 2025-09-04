@@ -30,13 +30,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](<img width="1319" height="655" alt="Image" src="https://github.com/user-attachments/assets/ed52a213-2d20-4c57-99b6-3308906081dd" />)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
 **Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
@@ -61,9 +56,9 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
-Here’s a **clear, concise “Mistakes & Learning Points”** section you can copy into your project’s README so you’ll remember these in the future:
+1. To load CSS Files async, you can check the code block below.
 
----
+`<link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">`
 
 ## Mistakes & Learning Points (HTML)
 
